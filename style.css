@@ -1,0 +1,53 @@
+/* Definindo fonte personalizada para o corpo do site */
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('https://c1.wallpaperflare.com/preview/378/330/325/black-business-business-man-computer.jpg');
+    /* Substitua pelo caminho da sua imagem de fundo */
+    background-size: 100% 100%;
+    /* Ajusta o tamanho da imagem para cobrir todo o corpo */
+    background-repeat: no-repeat;
+    /* Impede que a imagem de fundo seja repetida */
+    background-attachment: fixed;
+    /* Mantém a imagem de fundo fixa enquanto a página rola */
+}
+
+/* Estilos gerais para o corpo */
+body {
+    background-color: #ffffff;
+    /* Cor de fundo de backup caso a imagem não carregue */
+    color: #333;
+}
+
+/* Estilos para o container principal */
+.container {
+    background-color: rgba(119, 119, 119, 0.5); /* Cor opaca (com 50% de opacidade) */
+    border-radius: 10px;
+    padding: 20px;
+    color: #f0f0f0;
+}
+
+/* Estilos para os rótulos do formulário */
+.form-label {
+    font-weight: bold;
+    color: #dfdfdf;
+}
+
+/* Estilos para os campos de formulário */
+.form-control {
+    background-color: #fff;
+    border-color: #777;
+    color: #f0f0f0;
+}
+
+/* Estilos para os resultados */
+#resultado,
+#somaCustosDespesas,
+#precoVenda,
+#precoTotal {
+    background-color: #555;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 20px;
+}
