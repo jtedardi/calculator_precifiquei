@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Assow">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 
 <body>
@@ -18,81 +19,100 @@
     <div class="container mt-5">
         <h1 class="text-center">Calcule aqui o melhor preço de suas vendas para tornar sua empresa competitiva no
             mercado!</h1>
-        <form id="calculadora" class="mt-4">
-            <div class="container mt-5">
-                <h1 class="text-center">Precifiquei Calculator</h1>
-                <form id="calculadora" class="mt-4">
-                    <div class="mb-3 row">
-                        <label for="custosDiretos" class="form-label col-md-4">Custos Diretos</label>
-                        <div class="col-md-8">
-                            <input type="number" class="form-control" id="custosDiretos" required>
-                        </div>
+        <div class="container mt-5">
+            <h1 class="text-center">Precifiquei Calculator</h1>
+            <form id="calculadora" class="mt-4">
+                <div class="mb-3 row">
+                    <label for="custosDiretos" class="form-label col-md-4">Custos Diretos</label>
+                    <div class="col-md-8">
+                        <input type="number" class="form-control" id="custosDiretos" required>
                     </div>
-                    <div class="mb-3 row">
-                        <label for="custosIndiretos" class="form-label col-md-4">Custos Indiretos</label>
-                        <div class="col-md-8">
-                            <input type="number" class="form-control" id="custosIndiretos" required>
-                        </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="custosIndiretos" class="form-label col-md-4">Custos Indiretos</label>
+                    <div class="col-md-8">
+                        <input type="number" class="form-control" id="custosIndiretos" required>
                     </div>
-                    <div class="mb-3 row">
-                        <label for="custosFixos" class="form-label col-md-4">Custos Fixos</label>
-                        <div class="col-md-8">
-                            <input type="number" class="form-control" id="custosFixos" required>
-                        </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="custosFixos" class="form-label col-md-4">Custos Fixos</label>
+                    <div class="col-md-8">
+                        <input type="number" class="form-control" id="custosFixos" required>
                     </div>
-                    <div class="mb-3 row">
-                        <label for="custosVariaveis" class="form-label col-md-4">Custos Variáveis</label>
-                        <div class="col-md-8">
-                            <input type="number" class="form-control" id="custosVariaveis" required>
-                        </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="custosVariaveis" class="form-label col-md-4">Custos Variáveis</label>
+                    <div class="col-md-8">
+                        <input type="number" class="form-control" id="custosVariaveis" required>
                     </div>
-                    <div class="mb-3 row">
-                        <label for="despesasFixas" class="form-label col-md-4">Despesas Fixas</label>
-                        <div class="col-md-8">
-                            <input type="number" class="form-control" id="despesasFixas" required>
-                        </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="despesasFixas" class="form-label col-md-4">Despesas Fixas</label>
+                    <div class="col-md-8">
+                        <input type="number" class="form-control" id="despesasFixas" required>
                     </div>
-                    <div class="mb-3 row">
-                        <label for="despesasVariaveis" class="form-label col-md-4">Despesas Variáveis</label>
-                        <div class="col-md-8">
-                            <input type="number" class="form-control" id="despesasVariaveis" required>
-                        </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="despesasVariaveis" class="form-label col-md-4">Despesas Variáveis</label>
+                    <div class="col-md-8">
+                        <input type="number" class="form-control" id="despesasVariaveis" required>
                     </div>
-                    <div class="mb-3 row">
-                        <label for="tipoNegocio" class="form-label col-md-4">Tipo de Negócio</label>
-                        <div class="col-md-8">
-                            <select class="form-select" id="tipoNegocio" onchange="atualizarMargemLucro()">
-                                <option value="servicos">Serviços</option>
-                                <option value="comercio">Comércio</option>
-                                <option value="industria">Indústria</option>
-                            </select>
-                        </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="tipoNegocio" class="form-label col-md-4">Tipo de Negócio</label>
+                    <div class="col-md-8">
+                        <select class="form-select" id="tipoNegocio" onchange="atualizarMargemLucro()">
+                            <option value="servicos">Prestador de Serviços</option>
+                            <option value="comercio">Comércio</option>
+                            <option value="industria">Indústria</option>
+                        </select>
                     </div>
-                    <div class="mb-3 row">
-                        <label for="margemLucro" class="form-label col-md-4">Margem de Lucro (%)</label>
-                        <div class="col-md-8">
-                            <select class="form-select" id="margemLucro">
-                                <!-- Opções serão preenchidas dinamicamente com JavaScript -->
-                            </select>
-                        </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="margemLucro" class="form-label col-md-4">Margem de Lucro (%)</label>
+                    <div class="col-md-8">
+                        <select class="form-select" id="margemLucro">
+                            <!-- Opções serão preenchidas dinamicamente com JavaScript -->
+                        </select>
                     </div>
-                    <div class="mb-3 row">
-                        <label for="quantidade" class="form-label col-md-4">Quantidade de Unidades</label>
-                        <div class="col-md-8">
-                            <input type="number" class="form-control" id="quantidade" required>
-                        </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="regimeTribut" class="form-label col-md-4">Regime Tributário</label>
+                    <div class="col-md-8">
+                        <select class="form-select" id="regimeTribut" onchange="atualizarMargemTribut()">
+                            <option value="simplesnacional">Simples Nacional</option>
+                            <option value="lucropresumido">Lucro Presumido</option>
+                            <option value="lucroreal">Lucro Real</option>
+                        </select>
                     </div>
-                    <div class="text-center">
-                        <button type="button" class="btn btn-primary" onclick="calcular()">Calcular</button>
+                </div>
+                <div class="mb-3 row">
+                    <label for="margemTribut" class="form-label col-md-4">Margem Tributária (%)</label>
+                    <div class="col-md-8">
+                        <select class="form-select" id="margemTribut">
+                            <!-- Opções serão preenchidas dinamicamente com JavaScript -->
+                        </select>
                     </div>
-                </form>
-                <div id="resultado" class="mt-4"></div>
-                <div id="somaCustosDespesas" class="mt-4"></div>
-                <div id="precoVenda" class="mt-4"></div>
-                <div id="precoTotal" class="mt-4"></div>
-            </div>
-            <!-- Incluindo o arquivo JavaScript -->
-            <script src="script.js"></script>
+                </div>
+                <div class="mb-3 row">
+                    <label for="quantidade" class="form-label col-md-4">Quantidade de Unidades</label>
+                    <div class="col-md-8">
+                        <input type="number" class="form-control" id="quantidade" required>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="button" class="btn btn-primary" onclick="calcular()">Calcular</button>
+                </div>
+            </form>
+            <div id="resultado" class="mt-4"></div>
+            <div id="somaCustosDespesas" class="mt-4"></div>
+            <div id="margemTributResultado" class="mt-4"></div>
+            <div id="precoVenda" class="mt-4"></div>
+            <div id="precoTotal" class="mt-4"></div>
+        </div>
+    </div>
+    <!-- Incluindo o arquivo JavaScript -->
+    <script src="script.js"></script>
 </body>
 
 </html>

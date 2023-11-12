@@ -1,7 +1,9 @@
-/* Definindo fonte personalizada para o corpo do site */
+/* style.css */
+
+/* Adicione essas regras para o tema escuro */
 body {
     font-family: 'Arial', sans-serif;
-    background-image: url('https://c1.wallpaperflare.com/preview/378/330/325/black-business-business-man-computer.jpg');
+    background-image: url('https://wallpapers.com/images/hd/4k-office-background-2n3zsv5gvuarcov4.jpg');
     /* Substitua pelo caminho da sua imagem de fundo */
     background-size: 100% 100%;
     /* Ajusta o tamanho da imagem para cobrir todo o corpo */
@@ -20,7 +22,8 @@ body {
 
 /* Estilos para o container principal */
 .container {
-    background-color: rgba(119, 119, 119, 0.5); /* Cor opaca (com 50% de opacidade) */
+    background-color: rgba(119, 119, 119, 0.5);
+    /* Cor opaca (com 50% de opacidade) */
     border-radius: 10px;
     padding: 20px;
     color: #f0f0f0;
@@ -42,6 +45,7 @@ body {
 /* Estilos para os resultados */
 #resultado,
 #somaCustosDespesas,
+#margemTributResultado,
 #precoVenda,
 #precoTotal {
     background-color: #555;
@@ -50,4 +54,9 @@ body {
     border-radius: 5px;
     text-align: center;
     margin-top: 20px;
+}
+
+/* Estilos para os botões de interrogação */
+.btn-interrogacao {
+    margin-left: 5px;
 }
